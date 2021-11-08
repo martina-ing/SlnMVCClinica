@@ -1,0 +1,106 @@
+﻿@model MVCClinica.Data.Medico
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detail</title>
+</head>
+<body>
+    <h2>
+
+        Medico Detail
+
+    </h2>
+    <p>
+
+        Are you sure you want details ?
+
+    </p>
+
+    @using (Html.BeginForm("Detail", "Medico", FormMethod.Post))
+    {
+        <fieldset>
+            <legend>
+
+                Medico Detail
+
+            </legend>
+
+
+            <div class="display-label">
+
+                @Html.DisplayNameFor(model => model.Nombre)
+
+            </div>
+            <div class="display-text">
+
+                @Html.DisplayFor(model => model.Nombre)
+
+            </div>
+
+
+            <div class="display-label">
+
+                @Html.DisplayNameFor(model => model.Apellido)
+
+            </div>
+            <div class="display-text">
+
+                @Html.DisplayFor(model => model.Apellido)
+
+            </div>
+
+            <div class="display-label">
+
+                @Html.DisplayNameFor(model => model.NroMatricula)
+
+            </div>
+            <div class="display-text">
+
+                @Html.DisplayFor(model => model.NroMatricula)
+
+            </div>
+
+            <div class="display-label">
+
+                @Html.DisplayNameFor(model => model.Especialidad)
+
+            </div>
+            <div class="display-text">
+
+                @Html.DisplayFor(model => model.Especialidad)
+
+            </div>
+
+            <div class="display-label">
+
+                @Html.DisplayNameFor(model => model.FechaNacimiento)
+
+            </div>
+            <div class="display-text">
+
+                @Html.DisplayFor(model => model.FechaNacimiento)
+
+            </div>
+            <div class="display-label">
+
+                @Html.DisplayNameFor(model => model.Ciudad)
+
+            </div>
+            <div class="display-text">
+
+                @Html.DisplayFor(model => model.Ciudad)
+
+            </div>
+
+        </fieldset>
+
+     }
+
+    <p>
+        @Html.ActionLink("Back to List", "Index", "Medico")
+    </p>
+
+</body>
+</html>
