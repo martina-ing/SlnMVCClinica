@@ -17,7 +17,7 @@ namespace MVCClinica.Controllers
         public ActionResult Index()
         {
             var medico = AdminMedico.Listar();
-            ViewBag.Especialidades = new SelectList(AdminMedico.ListarSoloEspecialidades());
+           
             return View("Index", medico);
         }    //---------> LISTAR TODOS
 

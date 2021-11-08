@@ -10,11 +10,11 @@
 <body>
     <p>@Html.ActionLink("Create New", "Create", "Medico")</p>
 
-    @using (Html.BeginForm("SearchBySpecialty", "Medicos", FormMethod.Get))
+    @using (Html.BeginForm("SearchBySpecialty", "Medico", FormMethod.Get))
     {
 
         @Html.TextBox("especialidad",null)
-        //<input type="submit" value="Get" />
+        <input type="submit" value="Get" />
     }
     <table>
         <tr>
@@ -47,9 +47,9 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.Id })
         </td>
-        <td>
-            @Html.ActionLink("Especialidad", "SearchBySpecialty", new { especialidad = item.Especialidad })
-        </td>
+        @*<td>
+            @Html.ActionLink("Especialidad", "SearchBySpecialty", new { especialidad = item.Especialidad })*@
+        @*</td>*@
     </tr>
         }
     </table>
