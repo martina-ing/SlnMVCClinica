@@ -21,7 +21,7 @@ namespace MVCClinica.Data
             var esps = context.Medicos.Select(m => m.Especialidad).Distinct();
             return esps.ToList();
         }
-
+        //comm
         public static List<Medico> ListarPorEspecialidad(string especialidad)
         {
             List<Medico> medicosEspecialidad = (from o in context.Medicos
