@@ -24,8 +24,10 @@ namespace MVCClinica.Data
 
         public static List<Medico> ListarPorEspecialidad(string especialidad)
         {
-            var medicos = context.Medicos.Select(m => m.Especialidad == especialidad);
-            return (List<Medico>)medicos;
+            List<Medico> medicosEspecialidad = (from o in context.Medicos
+                                                where o.Especialidad == especialidad
+                                                select o).ToList();
+            return medicosEspecialidad;
         }
 
         internal static void Insertar(Medico medico)

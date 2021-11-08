@@ -9,6 +9,13 @@
 </head>
 <body>
     <p>@Html.ActionLink("Create New", "Create", "Medico")</p>
+
+    @using (Html.BeginForm("SearchBySpecialty", "Medicos", FormMethod.Get))
+    {
+
+        @Html.TextBox("especialidad",null)
+        //<input type="submit" value="Get" />
+    }
     <table>
         <tr>
             <th>@Html.DisplayNameFor(model => model.Nombre)</th>
@@ -23,25 +30,28 @@
         </tr>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
-                <td>@Html.DisplayFor(modelItem => item.Apellido)</td>
-                <td>@Html.DisplayFor(modelItem => item.NroMatricula)</td>
-                <td>@Html.DisplayFor(modelItem => item.Especialidad)</td>
-                <td>@Html.DisplayFor(modelItem => item.FechaNacimiento)</td>
-                <td>@Html.DisplayFor(modelItem => item.Ciudad)</td>
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+        <td>@Html.DisplayFor(modelItem => item.Apellido)</td>
+        <td>@Html.DisplayFor(modelItem => item.NroMatricula)</td>
+        <td>@Html.DisplayFor(modelItem => item.Especialidad)</td>
+        <td>@Html.DisplayFor(modelItem => item.FechaNacimiento)</td>
+        <td>@Html.DisplayFor(modelItem => item.Ciudad)</td>
 
-                <td>
-                    @Html.ActionLink("Detail", "Detail", new { id = item.Id })
-                </td>
-                <td>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })
-                </td>
-            </tr>
-         }
+        <td>
+            @Html.ActionLink("Detail", "Detail", new { id = item.Id })
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+        </td>
+        <td>
+            @Html.ActionLink("Especialidad", "SearchBySpecialty", new { especialidad = item.Especialidad })
+        </td>
+    </tr>
+        }
     </table>
 
 </body>

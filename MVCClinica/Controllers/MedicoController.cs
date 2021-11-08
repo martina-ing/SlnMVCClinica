@@ -21,12 +21,12 @@ namespace MVCClinica.Controllers
             return View("Index", medico);
         }    //---------> LISTAR TODOS
 
-        [ActionName("Filter")]
+       // [ActionName("Filter")]
         public ActionResult SearchBySpecialty(string especialidad)
         {
             if (especialidad == null)
             {
-                return View("Index");
+                return RedirectToAction("Index");
             }
             List<Medico> medicos = AdminMedico.ListarPorEspecialidad(especialidad);
             return View("Index", medicos);
